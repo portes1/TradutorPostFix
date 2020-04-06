@@ -5,13 +5,16 @@ namespace TradutorPostFix
 {
     class Program
     {
-        static void Main(string[] args)
+       static void Main(string[] args)
         {
             string infix, postfix;
-            Console.WriteLine("Por favor insira uma expressão infixada: ");
-            infix = Console.ReadLine();
-            postfix = Tradutor(infix);
-            Console.WriteLine("Postfix: " + postfix);
+            while (1 == 1)
+            {  
+                Console.WriteLine("Por favor insira uma expressão infixada: ");
+                infix = Console.ReadLine();
+                postfix = Tradutor(infix);
+                Console.WriteLine("Postfix: " + postfix);
+            }
         }
     public static string Tradutor(string infix)
         {
