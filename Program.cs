@@ -55,7 +55,7 @@ namespace TradutorPostFix
                 }
                 else
                 {
-                    Console.WriteLine("A entrada contém digito(s) inválido(s), a ser pode estar comprometida, por favor insira novamente.");
+                    Console.WriteLine("A entrada contém digito(s) inválido(s), a saída pode estar comprometida, por favor insira novamente.");
                 }
             }
             while(pilha.Count != 0)
