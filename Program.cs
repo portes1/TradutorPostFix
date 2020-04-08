@@ -1,11 +1,11 @@
-﻿using System;
+using System;
 using System.Collections.Generic;
 
 namespace TradutorPostFix
 {
     class Program
     {
-       static void Main(string[] args)
+        static void Main(string[] args)
         {
             string infix, postfix;
             while (1 == 1)
@@ -39,22 +39,23 @@ namespace TradutorPostFix
                     {
                         aux += pilha.Pop();
                     }
-                    if (pilha.Count != 0 && pilha.Peek() != '(')
-                    {
-                        return "Entrada invalida";
-                    }
-                    else
+
+                    if (pilha.Count == 0 || pilha.Peek() == '(')
                     {
                         pilha.Pop();
-                    }
+                    }  
                 }
-                else
+                else if (digito == '+' || digito == '-' || digito == '*' || digito == '/' || digito == '^' )
                 {
                     while (pilha.Count != 0 && Precedencia(digito) <= Precedencia(pilha.Peek()))
                     {
                       aux += pilha.Pop();                       
                     }
                     pilha.Push(digito);
+                }
+                else
+                {
+                    Console.WriteLine("A entrada contém digito(s) inválido(s), a ser pode estar comprometida, por favor insira novamente.");
                 }
             }
             while(pilha.Count != 0)
@@ -71,12 +72,10 @@ namespace TradutorPostFix
                     return 1;
                 case '-':
                     return 1;
-
                 case '*':
                     return 2;
                 case '/':
                     return 2;
-
                 case '^':
                     return 3;
             }
